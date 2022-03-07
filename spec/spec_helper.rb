@@ -1,5 +1,6 @@
 require "active_record"
 require "benchmark"
+require "shoulda-matchers"
 require_relative "../app/models/person"
 
 PROJECT_ROOT = File.expand_path("../..", __FILE__)
@@ -20,3 +21,13 @@ end
 CreateSchema.suppress_messages { CreateSchema.migrate(:up) }
 
 I18n.enforce_available_locales = false
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+
+    # Keep as many of these lines as are necessary:
+    with.library :active_record
+    with.library :active_model
+  end
+end

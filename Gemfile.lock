@@ -31,6 +31,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
     rspec-support (3.11.0)
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     sqlite3 (1.4.2)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -43,6 +45,7 @@ DEPENDENCIES
   activerecord (~> 6.1)
   rake
   rspec (~> 3.11)
+  shoulda-matchers
   sqlite3
 
 BUNDLED WITH
